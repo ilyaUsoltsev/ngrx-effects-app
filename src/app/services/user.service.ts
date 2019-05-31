@@ -18,4 +18,15 @@ export class UserService {
         })
       );
   }
+
+  getUser(id: string) {
+    return this.http.get(`${this.url}/users/${id}`)
+      .pipe(
+        map((res: any) => {
+          return res.data;
+        })
+      );
+  }
+
+
 }
